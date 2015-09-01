@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+    <!-- Meta-Information -->
+    <title>HSBC Calculator</title>
+    <meta charset="utf-8">
+    <meta name="description" content="HSBC Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!-- Our Website CSS Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="hsbcCalculator">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-controller="calcController">
+    
+    
+
+    <div class="radial-scale">
+        <day-dial number-of-days="numberOfDays" top-ten-percent="{11: ['#830009', 'rgba(131, 0, 8, 0.6)'], 16: ['#307591', 'rgba(47, 116, 144, 0.6)'], 27: ['#3f515b', 'rgba(63, 81, 91, 0.6)']}"></day-dial>
+        <radial-slider value="calc1Day" number-of-days="numberOfDays" radius="250" thickness="30" colour="#3e505a"></radial-slider>
+        <radial-slider value="calc2Day" number-of-days="numberOfDays" radius="200" thickness="30" colour="#2f7490"></radial-slider>
+        <radial-slider value="calc3Day" number-of-days="numberOfDays" radius="150" thickness="30" colour="#820008"></radial-slider> 
+        <div class="radial-center">
+            <div class="total-value">
+                <p>Total</p>
+                <strong>{{calcTotalValue}}</strong>
+                <div>
+                    <i class="fa" ng-class="calcTotalValue - calcTotalValueInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i><span>{{calcTotalValue - calcTotalValueInit}}</span>
+                </div>
+                
+            </div>            
+        </div>
+    </div>
+    <div class="radial-monitors">
+        <div id="calc1" class="monitor">
+            <h4>Calc 1</h4>
+            <div class="calc-day">
+                <p>Days</p>
+                <span class="emphasize" ng-model="calc1Day" ng-init="calc1Day=calc1DayInit">{{calc1Day}}</span>
+                <i class="fa" ng-class="calc1Day - calc1DayInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc1Day - calc1DayInit}}</span>
+            </div>
+
+            <div class="calc-value">
+                <p>Value</p>
+                <span class="emphasize">{{calc1Value}}</span>
+                <i class="fa" ng-class="calc1Value - calc1ValueInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc1Value - calc1ValueInit}}</span>
+            </div>
+        </div>
+
+        <div id="calc2" class="monitor">
+            <h4>Calc 2</h4>
+            <div class="calc-day">
+                <p>Days</p>
+                <span class="emphasize" ng-model="calc2Day" ng-init="calc2Day=calc2DayInit">{{calc2Day}}</span>
+                <i class="fa" ng-class="calc2Day - calc2DayInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc2Day - calc2DayInit}}</span>
+            </div>
+
+            <div class="calc-value">
+                <p>Value</p>
+                <span class="emphasize">{{calc2Value}}</span>
+                <i class="fa" ng-class="calc2Value - calc2ValueInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc2Value - calc2ValueInit}}</span>
+            </div>
+        </div>
+
+        <div id="calc3" class="monitor">
+            <h4>Calc 3</h4>
+            <div class="calc-day">
+                <p>Days</p>
+                <span class="emphasize" ng-model="calc3Day" ng-init="calc3Day=calc3DayInit">{{calc3Day}}</span>
+                <i class="fa" ng-class="calc3Day - calc3DayInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc3Day - calc3DayInit}}</span>
+            </div>
+
+            <div class="calc-value">
+                <p>Value</p>
+                <span class="emphasize">{{calc3Value}}</span>
+                <i class="fa" ng-class="calc3Value - calc3ValueInit >= 0 ? 'fa-caret-up' : 'fa-caret-down'"></i>
+                <span>{{calc3Value - calc3ValueInit}}</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/vendor/jquery-1.11.3.min.js"></script>
+
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/angular-touch.min.js"></script>
+
+<script type='application/javascript' src='js/vendor/fastclick.js'></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+
+</body>
+</html>

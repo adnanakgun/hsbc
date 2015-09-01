@@ -1,0 +1,19 @@
+<div class="radial-slider" ng-mousedown="mouseClicked = true" ng-mouseup="mouseClicked = false"  ng-touchstart="mouseClicked = true" ng-touchend="mouseClicked = false">
+	<div class="absolute-center">
+	    <div class="circle" ng-repeat="cell in numberOfDaysArr"
+	         ng-style="{
+	        			'transform': cell.deg, 
+	    				'width': radius + 'px'
+	    	 }">
+	        <span class="circle-pie" ng-mousemove="mouseSelect($index)" ng-touchmove="select($index)"
+	        	  ng-style="{
+        					'width': (2 * cell.outerRadius * Math.PI) / numberOfDaysArr.length + 'px',
+        					'height': thickness +'px',
+        					'bottom': '-' + (2 * cell.outerRadius) / numberOfDaysArr.length + 'px',
+    						'background-color': $index <= value && $index != 0 ? colour : 'transparent'
+	        	  }">
+	        </span>
+	        <img class="slider-cursor" src="img/dragger.png" ng-show="$index == value"/>
+	    </div>
+	</div>
+</div>

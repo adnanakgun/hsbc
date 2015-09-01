@@ -1,0 +1,20 @@
+<div class="day-dial">
+	<div class="absolue-center">
+	    <div class="days" ng-repeat="day in numberOfDaysArr" ng-style="{'transform': day.deg}">
+	        <div class="day-wrapper" ng-class="{'top-ten': topTenPercent[$index].length > 0}"
+	        	 ng-style="{
+	        	 	'color': (topTenPercent[$index].length > 0) ? '#ffffff' : '#000000',
+	        	 	'width': (topTenPercent[$index].length > 0) ? '100px' : 'auto'
+	        	 }">
+
+	        	<span class="day-number" ng-style="{'background-color': (topTenPercent[$index].length > 0) ? topTenPercent[$index][0] : 'transparent'}">	{{$index}}
+	        	</span>
+	        	<span class="extra-text" ng-show="topTenPercent[$index].length > 0"
+	        		  ng-style="{
+	        	 		'background-color': topTenPercent[$index][1]
+	        		  }">TOP 10%</span>
+
+	        </div>
+	    </div>
+	</div>
+</div>

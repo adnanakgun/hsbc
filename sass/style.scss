@@ -1,0 +1,212 @@
+/* latin */
+@font-face {
+  font-family: 'Roboto-thin';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Light'), url(fonts/Roboto-Thin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+html{
+	font-family: 'Roboto-thin', sans-serif;
+	body{
+		clear: both;
+		.radial-scale{
+			float: left;
+			position: relative;
+			width: 600px;
+			height: 600px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			.day-dial{
+				position: absolute; 
+				left: 50%; 
+				top: 50%; 
+				z-index: -1;
+				.absolue-center{
+					position:relative;
+					.days{
+						position:absolute; 
+						text-align: right; 
+						border-bottom: 1px dotted #000000; 
+						width: 275px; 
+						height: 1px; 
+						transform-origin: 0% 0%;
+						.day-wrapper{
+							position: absolute; 
+							left: 100%; 
+							bottom: 0; 
+							display: inline-block; 
+							text-align: left;
+							font-size: 10px;
+							.day-number{
+								border-radius: 50%;
+								padding: 3%;
+							}
+							&.top-ten{
+								.extra-text{
+									position: relative;
+									padding: 3% 0 3% 10px;
+									margin-left: -7px;
+									&:before,
+									&:after{
+										content: ' ';
+									    position: absolute;
+									    height: 100%;
+									    top: -1.5%;
+									    background-color: inherit;
+									}
+									&:before{
+									    right: 100%;
+									    border-top-left-radius: 50%;
+									    border-bottom-left-radius: 50%;
+									    width: 11px;
+									}
+									&:after{
+									    left: 100%;
+									    border-top-right-radius: 50%;
+									    border-bottom-right-radius: 50%;
+									    width: 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.radial-slider{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				.absolute-center{
+					position:relative;
+					.circle{
+	        			position:absolute;
+	        			transform-origin: 0% 0%;
+	        			.circle-pie{
+	        				position: absolute;
+	        				right: 0;
+	        				transform: rotate(268deg);
+	        				z-index: 50;
+	        			}
+	        			.slider-cursor{
+	        				position: absolute; 
+	        				right: -9px; 
+	        				bottom: -20px; 
+	        				cursor: pointer; 
+	        				z-index: 99;
+	        			}
+					}
+				}
+			}
+			.radial-center{
+				display: inline-table;
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background-color: #00857f;
+				color: #ffffff;
+				border-radius: 50%;
+				left: 50%; 
+				top: 50%; 
+				transform: translate(-50%, -50%);
+				.total-value{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					p{
+						margin-bottom: 5px;
+					}
+					strong{
+						font-family: 'Roboto', sans-serif;
+						font-size: 40px;
+					}
+					div{
+						margin-top: 5px;
+						i{
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+			
+		}
+		.radial-monitors{
+			float: right;
+			width: 250px;
+			.monitor{
+				h4{
+					color: #ffffff;
+					text-transform: uppercase;
+					font-family: 'Roboto', sans-serif;
+					font-weight: normal;
+					padding: 5px;
+					margin-top: 10px;
+					margin-bottom: 0;
+				}
+				.calc-day{
+					border-right: 1px solid;
+				}
+				.calc-day,
+				.calc-value{
+					width: 49%;
+					display: inline-block;
+					box-sizing: border-box;
+					padding: 10px 20px;
+					p{
+						margin-top: 0;
+						margin-bottom: 5px;
+					}
+					span{
+						font-family: 'Roboto', sans-serif;
+						font-size: 15px;
+						&.emphasize{
+							font-size: 25px;
+						}
+					}
+					i{
+						font-size: 20px;
+					}
+				}
+			}
+			#calc1{
+				background-color: #ebedee;
+				color: #3f515b;
+				h4{
+					background-color: #3f515b;
+				}
+				.calc-day{
+					border-color: #3f515b;
+				}
+			}
+			#calc2{
+				background-color: #eaf1f4;
+				color: #307591;
+				h4{
+					background-color: #307591;
+				}
+				.calc-day{
+					border-color: #307591;
+				}
+			}
+			#calc3{
+				background-color: #f2e5e6;
+				color: #830009;
+				h4{
+					background-color: #830009;
+				}
+				.calc-day{
+					border-color: #830009;
+				}
+			}
+		}
+	}
+}
